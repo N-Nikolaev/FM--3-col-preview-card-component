@@ -1,0 +1,58 @@
+//Imports
+
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+// Colors
+
+$clr-orange:            hsl(31, 77%, 52%);
+$clr-cyan:              hsl(184, 100%, 22%);
+$clr-dark-cyan:         hsl(179, 100%, 13%);
+
+$txt-primary:           hsla(0, 0%, 100%, 0.75);
+$txt-secondary:         hsl(0, 0%, 95%);
+
+
+// Fonts
+
+$font-lexend:           'Lexend Deca', sans-serif;
+$font-shoulders:        'Big Shoulders Display', sans-serif;
+
+
+// Breakpoint
+
+$br-laptop:             1024px;
+
+
+// Mixins
+
+@mixin mq {
+    @media (min-width: $br-laptop) {
+        @content;
+    }
+}
+
+
+//------------------------------------------------------------//
+
+// Reset
+
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+// Style
+
+body {
+    font-size: 15px;
+}
+
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+}
+
+.attribution a { color: hsl(228, 45%, 44%); }
