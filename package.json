@@ -4,7 +4,8 @@
   "description": "![Design preview for the 3-column preview card component coding challenge](./design/desktop-preview.jpg)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/N-Nikolaev/FM--3-col-preview-card-component#readme",
   "devDependencies": {
+    "parcel-bundler": "^1.12.5",
     "sass": "^1.37.5"
   }
 }
