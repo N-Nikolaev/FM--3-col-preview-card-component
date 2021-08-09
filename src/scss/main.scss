@@ -1,5 +1,4 @@
 //Imports
-
 @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
 
 // Colors
@@ -8,8 +7,8 @@ $clr-orange:            hsl(31, 77%, 52%);
 $clr-cyan:              hsl(184, 100%, 22%);
 $clr-dark-cyan:         hsl(179, 100%, 13%);
 
-$txt-primary:           hsla(0, 0%, 100%, 0.75);
-$txt-secondary:         hsl(0, 0%, 95%);
+$clr-primary:           hsl(0, 0%, 95%);
+$clr-secondary:         hsla(0, 0%, 100%, 0.75);
 
 
 // Fonts
@@ -45,14 +44,113 @@ $br-laptop:             1024px;
 
 // Style
 
-body {
+:root, body {
     font-size: 15px;
+
+    background-color: $clr-primary;
 }
 
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-areas: 
+        "sedan"
+        "suv"
+        "luxury";
+    margin: 2rem;
+    max-width: 850px;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    @include mq { grid-template-areas: "sedan suv luxury"; }
+}
+
+.card {
+    padding: 2.5rem;
+
+    font-family: $font-lexend;
+    color: $clr-secondary;
+
+    &--sedan {
+        grid-area: sedan;
+        background-color: $clr-orange;
+    }
+
+    &--suv {
+        grid-area: suv;
+        background-color: $clr-cyan;
+    }
+
+    &--luxury {
+        grid-area: luxury;
+        background-color: $clr-dark-cyan;
+    }
+
+    &__img { margin-bottom: 1.5rem; }
+
+    &__title {
+        margin-bottom: 1.5rem;
+
+        font-family: $font-shoulders;
+        font-size: 2rem;
+        text-transform: uppercase;
+    }
+
+    &__content {
+        margin-bottom: 1.5rem;
+
+        line-height: 1.8rem;
+
+        @include mq {
+            margin-bottom: 5rem;
+        }
+    }
+}
+
+.btn {
+    padding: 12px 28px;
+
+    background-color: $clr-primary;
+    border: 2px solid $clr-primary;
+    border-radius: 30px;
+
+    &:hover {
+        color: $clr-primary !important;
+
+        background-color: transparent;
+    }
+
+    &--sedan { color: $clr-orange; }
+
+    &--suv { color: $clr-cyan; }
+
+    &--luxury { color: $clr-dark-cyan; }
+}
 
 .attribution { 
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    width: 100%;
+    height: 14px; // Height of text 
+
     font-size: 11px; 
     text-align: center; 
+
+    a { color: hsl(228, 45%, 44%); }
 }
 
-.attribution a { color: hsl(228, 45%, 44%); }
