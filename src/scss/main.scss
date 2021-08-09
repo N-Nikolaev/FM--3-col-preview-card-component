@@ -30,6 +30,32 @@ $br-laptop:             1024px;
     }
 }
 
+@mixin wrapRadius($radius) {
+    &:first-child {
+        border-radius: 0;
+        border-top-left-radius: $radius;
+        border-top-right-radius: $radius;
+
+        @include mq {
+            border-radius: 0;
+            border-top-left-radius: $radius;
+            border-bottom-left-radius: $radius;
+        }
+    }
+
+    &:last-child {
+        border-radius: 0;
+        border-bottom-left-radius: $radius;
+        border-bottom-right-radius: $radius;
+
+        @include mq {
+            border-radius: 0;
+            border-top-right-radius: $radius;
+            border-bottom-right-radius: $radius;
+        }
+    }
+}
+
 
 //------------------------------------------------------------//
 
@@ -60,6 +86,10 @@ $br-laptop:             1024px;
     align-items: center;
     width: 100%;
     height: 100%;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+    @include mq { padding: 0; }
 }
 
 .wrapper {
@@ -71,10 +101,6 @@ $br-laptop:             1024px;
     margin: 2rem;
     max-width: 850px;
 
-    border-radius: 10px;
-
-    overflow: hidden;
-
     @include mq { grid-template-areas: "sedan suv luxury"; }
 }
 
@@ -83,6 +109,8 @@ $br-laptop:             1024px;
 
     font-family: $font-lexend;
     color: $clr-secondary;
+
+    @include wrapRadius(10px);
 
     &--sedan {
         grid-area: sedan;
@@ -141,7 +169,7 @@ $br-laptop:             1024px;
 }
 
 .attribution { 
-    position: absolute;
+    position: relative;
     bottom: 0;
     right: 0;
 
@@ -152,5 +180,7 @@ $br-laptop:             1024px;
     text-align: center; 
 
     a { color: hsl(228, 45%, 44%); }
+
+    @include mq { position: absolute; }
 }
 
