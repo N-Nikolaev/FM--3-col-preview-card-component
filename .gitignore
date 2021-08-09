@@ -18,4 +18,3 @@
 # Avoid uploading dev dependencies #
 node_modules
 .cache/**
-dist/**
